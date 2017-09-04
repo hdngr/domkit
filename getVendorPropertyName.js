@@ -8,7 +8,7 @@ var domVendorPrefix;
 module.exports = function(prop, isSupportTest) {
 
   var vendorProp;
-  if (prop in builtinStyle) return prop;
+  if (!builtinStyle || prop in builtinStyle) return prop;
 
   var UpperProp = prop.charAt(0).toUpperCase() + prop.substr(1);
 
